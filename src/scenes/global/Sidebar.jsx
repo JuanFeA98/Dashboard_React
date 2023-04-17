@@ -22,8 +22,6 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutLinedIcon  from '@mui/icons-material/TimelineOutlined'
 import MenuOutLinedIcon  from '@mui/icons-material/MenuOutlined'
 import MapOutLinedIcon  from '@mui/icons-material/MapOutlined'
-import { InventoryOutlined } from '@mui/icons-material'
-
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -239,7 +237,7 @@ export default function Sidebar() {
 
             <Item
               title='Pie Chart'
-              to='/pir'
+              to='/pie'
               icon={<PieChartOutlineOutlinedIcon/>}
               selected={selected}
               setSelected={setSelected}
