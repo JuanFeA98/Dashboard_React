@@ -23,7 +23,7 @@ export const mockDataTeam = [
       email: "jaimelannister@gmail.com",
       age: 45,
       phone: "(422)982-6739",
-      access: "user",
+      access: "manager",
     },
     {
       id: 4,

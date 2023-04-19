@@ -164,7 +164,7 @@ export default function Sidebar() {
 
             <Item
               title='Contacts Information'
-              to='/invoices'
+              to='/contacts'
               icon={<ContactsOutLinedIcon/>}
               selected={selected}
               setSelected={setSelected}
