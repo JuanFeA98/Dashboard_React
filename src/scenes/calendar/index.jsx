@@ -24,14 +24,14 @@ export default function Calendar() {
         const calendarApi = selected.view.calendar;
         calendarApi.unselect();
 
-        if(title){
+        if (title) {
             calendarApi.addEvent({
                 id: `${selected.dateStr}-${title}`,
                 title,
-                start: selected.starStr,
+                start: selected.startStr,
                 end: selected.endStr,
                 allDay: selected.allDay
-            })
+            });
         }
     };
 
