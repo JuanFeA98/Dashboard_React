@@ -89,10 +89,10 @@ export default function Calendar() {
                 backgroundColor={colors.primary[400]}
                 ml='15px'
                 p='15px'
-                // borderRadius='4px'
+                borderRadius='4px'
             >
                 <FullCalendar
-                    height='75vh'
+                    height='62vh'
                     plugins={[
                         dayGridPlugin,
                         timeGridPlugin,
