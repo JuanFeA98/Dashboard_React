@@ -6,7 +6,6 @@ import { mockBarData as data} from '../data/mockData'
 
 import { tokens } from '../theme'
 
-
 export default function BarChart( {isDashboard = false} ) {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode)
