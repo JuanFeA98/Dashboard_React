@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { ResponsivePie } from '@nivo/pie'
-import { mockBarData as data} from '../data/mockData'
+import { mockPieData as data} from '../data/mockData'
 
 export default function PieChart() {
   return (
