@@ -13,6 +13,34 @@ export default function PieChart() {
     return (
         <ResponsivePie
             data={data}
+            theme={{
+                axis:{
+                    domain:{
+                        line:{
+                            stroke: colors.grey[100]
+                        }
+                    },
+                    legend:{
+                        text:{
+                            fill: colors.grey[100]
+                        }
+                    },
+                    ticks:{
+                        line:{
+                            stroke: colors.grey[100],
+                            strokeWidth: 1
+                        },
+                        text:{
+                            fill: colors.grey[100]
+                        }
+                    }
+                },
+                legends:{
+                    text:{
+                        fill: colors.grey[100]
+                    }
+                }
+            }}
             margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
             innerRadius={0.5}
             activeOuterRadiusOffset={8}
@@ -58,56 +86,6 @@ export default function PieChart() {
                     rotation: -45,
                     lineWidth: 6,
                     spacing: 10
-                }
-            ]}
-            fill={[
-                {
-                    match: {
-                        id: 'ruby'
-                    },
-                    id: 'dots'
-                },
-                {
-                    match: {
-                        id: 'c'
-                    },
-                    id: 'dots'
-                },
-                {
-                    match: {
-                        id: 'go'
-                    },
-                    id: 'dots'
-                },
-                {
-                    match: {
-                        id: 'python'
-                    },
-                    id: 'dots'
-                },
-                {
-                    match: {
-                        id: 'scala'
-                    },
-                    id: 'lines'
-                },
-                {
-                    match: {
-                        id: 'lisp'
-                    },
-                    id: 'lines'
-                },
-                {
-                    match: {
-                        id: 'elixir'
-                    },
-                    id: 'lines'
-                },
-                {
-                    match: {
-                        id: 'javascript'
-                    },
-                    id: 'lines'
                 }
             ]}
             legends={[
