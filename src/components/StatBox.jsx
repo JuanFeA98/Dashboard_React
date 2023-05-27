@@ -7,12 +7,12 @@ import ProgressCircle from './ProgressCircle'
 
 export default function StatBox({ title, subtitle, icon, progress, increase }) {
     const theme = useTheme();
-    const colors = theme(tokens.palette.mode);
-  
+    const colors = tokens(theme.palette.mode);
+    
     return (
         <Box width='100%' m='0 30px'>
             <Box display='flex' justifyContent='space-between'>
-                <Box>
+                <Box display='flex' flexDirection='column' alignItems='center'>
                     {icon}
                     <Typography variant='h4' fontWeight='bold' sx={{ color:colors.grey[100] }}>
                         {title}
@@ -21,7 +21,7 @@ export default function StatBox({ title, subtitle, icon, progress, increase }) {
                 <Box>
                     <ProgressCircle progress={progress}/>
                 </Box>
-                <Box display='flex' justifyContent='space-between'>
+                <Box display='flex' alignItems='space-between' flexDirection='column'>
                     <Typography variant='h5' sx={{ color:colors.grey[100] }}>
                         {subtitle}
                     </Typography>

@@ -6,7 +6,7 @@ import { tokens } from '../theme'
 
 export default function ProgressCircle({ progress=0.75, size=40 }) {
     const theme = useTheme();
-    const colors = theme(tokens.palette.mode);
+    const colors = tokens(theme.palette.mode);
     const angle = progress * 360
 
     return (
