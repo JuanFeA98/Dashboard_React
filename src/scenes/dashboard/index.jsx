@@ -50,6 +50,8 @@ export default function Dashboard() {
         gridTemplateColumns='repeat(12, 1fr)'
         gridAutoRows='75px'
         gap='20px'
+        overflow='auto'
+        maxHeight='70vh'
       >
 
         {/* Row 1 */}
@@ -123,11 +125,14 @@ export default function Dashboard() {
         </Box>
 
         {/* Row 2 */}
+
+        {/* Line Chart */}
         <Box 
           gridColumn='span 8'
           gridRow='span 3'
           backgroundColor={colors.primary[400]}
           >
+
           <Box
             mt='25px'
             p='0 30px'
@@ -158,10 +163,138 @@ export default function Dashboard() {
           <Box height='200px' ml='-20px'>
             <LineChart isDashboard={true}/>
           </Box>
-
-
         </Box>
 
+        {/* Transactions */}
+        <Box
+          gridColumn='span 4'
+          gridRow='span 3'
+          backgroundColor={colors.primary[400]}
+          overflow='auto'
+        >
+          <Box
+            display='flex'
+            justifyContent='space-between'
+            alignItems='center'
+            borderBottom={`4px solid ${colors.primary[500]}`}
+          >
+            <Typography
+              color={colors.grey[100]}
+              variant='h5'
+              fontWeight='600'            
+            >
+              Recent Transactions
+            </Typography>
+          </Box>
+
+          {mockTransactions.map((transaction, i) =>(
+            <Box
+              key={`${transaction.txId}-${i}`}
+              display='flex'
+              justifyContent='space-between'
+              alignItems='center'
+              borderBottom={`4px solid ${colors.primary[500]}`}
+              P='15px'
+            >
+              <Box>
+                <Typography
+                  color={colors.greenAccent[500]}
+                  variant='h5'
+                  fontWeight='600'
+                >
+                  {transaction.txId}
+                </Typography>
+                <Typography
+                  color={colors.grey[100]}
+                >
+                  {transaction.user}
+                </Typography>
+              </Box>
+              <Box
+                color={colors.grey[100]}
+              >
+                {transaction.date}
+              </Box>
+              <Box
+                backgroundColor={colors.greenAccent[500]}
+                p='5px 10px'
+                borderRadius='4px'
+              >
+                ${transaction.cost}
+              </Box>
+            </Box>
+          ))
+
+          }
+        </Box>
+
+        {/* Row 3 */}
+        <Box
+          gridColumn='span 4'
+          gridRow='span 3'
+          backgroundColor={colors.primary[400]}
+          p='30px'
+        >
+          <Typography
+            variant='h5'
+            fontWeight='600'
+          >
+            Campaign
+          </Typography>
+          <Box
+            display='flex'
+            flexDirection='column'
+            alignItems='center'
+            mt='25px'
+          >
+            <ProgressCircle size='125'/>
+            <Typography
+              variant='h5'
+              colors={colors.greenAccent[500]}
+              sx={{
+                mt:'15px'
+              }}
+            >
+              $48.352 revenue generated
+            </Typography>
+            <Typography>
+              Includes extra misc expenditures and costs
+            </Typography>
+          </Box>
+        </Box>
+        <Box
+          gridColumn="span 4"
+          gridRow="span 3"
+          backgroundColor={colors.primary[400]}
+        >
+          <Typography
+            variant="h5"
+            fontWeight="600"
+            sx={{ padding: "30px 30px 0 30px" }}
+          >
+            Sales Quantity
+          </Typography>
+          <Box height="250px" mt="-20px">
+            <BarChart isDashboard={true} />
+          </Box>
+        </Box>
+        <Box
+          gridColumn="span 4"
+          gridRow="span 3"
+          backgroundColor={colors.primary[400]}
+          padding="30px"
+        >
+          <Typography
+            variant="h5"
+            fontWeight="600"
+            sx={{ marginBottom: "15px" }}
+          >
+            Geography Based Traffic
+          </Typography>
+          <Box height="200px">
+            <GeographyChart isDashboard={true} />
+          </Box>
+        </Box>
       </Box>
     </Box>
   )
